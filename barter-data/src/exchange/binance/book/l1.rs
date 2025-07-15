@@ -175,7 +175,7 @@ mod tests {
             for (index, test) in tests.into_iter().enumerate() {
                 let actual = serde_json::from_str::<BinanceOrderBookL1>(test.input).unwrap();
                 let actual = BinanceOrderBookL1 { time, ..actual };
-                assert_eq!(actual, test.expected, "TC{} failed", index);
+                assert_eq!(actual, test.expected, "TC{index} failed");
             }
         }
     }

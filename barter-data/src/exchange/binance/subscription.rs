@@ -78,7 +78,7 @@ mod tests {
                 let actual = serde_json::from_str::<BinanceSubResponse>(test.input);
                 match (actual, test.expected) {
                     (Ok(actual), Ok(expected)) => {
-                        assert_eq!(actual, expected, "TC{} failed", index)
+                        assert_eq!(actual, expected, "TC{index} failed")
                     }
                     (Err(_), Err(_)) => {
                         // Test passed
@@ -122,7 +122,7 @@ mod tests {
 
         for (index, test) in cases.into_iter().enumerate() {
             let actual = test.input_response.validate().is_ok();
-            assert_eq!(actual, test.is_valid, "TestCase {} failed", index);
+            assert_eq!(actual, test.is_valid, "TestCase {index} failed");
         }
     }
 }

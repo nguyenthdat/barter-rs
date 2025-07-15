@@ -895,7 +895,7 @@ mod tests {
                 test.trade_quantity_abs,
             );
 
-            assert_eq!(actual, test.expected, "TC{} failed", index)
+            assert_eq!(actual, test.expected, "TC{index} failed")
         }
     }
 
@@ -984,7 +984,7 @@ mod tests {
                 test.price,
             );
 
-            assert_eq!(actual, test.expected, "TC{} failed", index);
+            assert_eq!(actual, test.expected, "TC{index} failed");
         }
     }
 
@@ -1035,7 +1035,7 @@ mod tests {
                 test.fees_enter,
             );
 
-            assert_eq!(actual, test.expected, "TC{} failed", index);
+            assert_eq!(actual, test.expected, "TC{index} failed");
         }
     }
 
@@ -1164,13 +1164,13 @@ mod tests {
         for (index, test) in cases.into_iter().enumerate() {
             let actual = calculate_pnl_realised(
                 test.side,
-                test.price_entry_average.into(),
-                test.closed_quantity.into(),
-                test.closed_price.into(),
-                test.closed_fee.into(),
+                test.price_entry_average,
+                test.closed_quantity,
+                test.closed_price,
+                test.closed_fee,
             );
 
-            assert_eq!(actual, test.expected, "TC{} failed", index);
+            assert_eq!(actual, test.expected, "TC{index} failed");
         }
     }
 
@@ -1216,12 +1216,12 @@ mod tests {
 
         for (index, test) in cases.into_iter().enumerate() {
             let actual = calculate_pnl_return(
-                test.pnl_realised.into(),
-                test.price_entry_average.into(),
-                test.quantity_abs_max.into(),
+                test.pnl_realised,
+                test.price_entry_average,
+                test.quantity_abs_max,
             );
 
-            assert_eq!(actual, test.expected, "TC{} failed", index);
+            assert_eq!(actual, test.expected, "TC{index} failed");
         }
     }
 }

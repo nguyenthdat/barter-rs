@@ -202,7 +202,7 @@ mod tests {
                 let actual = serde_json::from_str::<KrakenOrderBookL1>(test.input);
                 match (actual, test.expected) {
                     (Ok(actual), Ok(expected)) => {
-                        assert_eq!(actual, expected, "TC{} failed", index)
+                        assert_eq!(actual, expected, "TC{index} failed")
                     }
                     (Err(_), Err(_)) => {
                         // Test passed

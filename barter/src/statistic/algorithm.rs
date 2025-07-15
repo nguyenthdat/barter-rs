@@ -208,13 +208,11 @@ mod tests {
 
     #[test]
     fn calculate_sample_variance() {
-        let inputs = vec![
-            (dec!(0.0), dec!(1)),
+        let inputs = [(dec!(0.0), dec!(1)),
             (dec!(1050.0), dec!(5)),
             (dec!(1012.5), dec!(123223)),
             (dec!(16200000000.0), dec!(3)),
-            (dec!(99999.9999), dec!(23232)),
-        ];
+            (dec!(99999.9999), dec!(23232))];
         let expected = vec![
             dec!(0.0),
             dec!(262.5),
@@ -231,13 +229,11 @@ mod tests {
 
     #[test]
     fn calculate_population_variance() {
-        let inputs = vec![
-            (dec!(0.0), 1),
+        let inputs = [(dec!(0.0), 1),
             (dec!(1050.0), 5),
             (dec!(1012.5), 123223),
             (dec!(16200000000.0), 3),
-            (dec!(99999.9999), 23232),
-        ];
+            (dec!(99999.9999), 23232)];
         let expected = vec![
             dec!(0.0),
             dec!(210.0),

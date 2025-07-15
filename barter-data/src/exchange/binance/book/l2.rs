@@ -196,8 +196,7 @@ mod tests {
                 assert_eq!(
                     serde_json::from_str::<BinanceOrderBookL2Snapshot>(test.input).unwrap(),
                     test.expected,
-                    "TC{} failed",
-                    index
+                    "TC{index} failed"
                 );
             }
         }

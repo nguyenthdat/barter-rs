@@ -189,7 +189,7 @@ impl OrderBookSide<Asks> {
     where
         L: Into<Level> + Copy,
     {
-        levels.into_iter().for_each(|upsert| {
+        levels.iter().for_each(|upsert| {
             let upsert = (*upsert).into();
             self.upsert_single(upsert, |existing| existing.price.cmp(&upsert.price))
         })
@@ -683,7 +683,7 @@ mod tests {
                 test.book_side.upsert_single(test.new_level, |existing| {
                     existing.price.cmp(&test.new_level.price).reverse()
                 });
-                assert_eq!(test.book_side, test.expected, "TC{} failed", index);
+                assert_eq!(test.book_side, test.expected, "TC{index} failed");
             }
         }
     }
